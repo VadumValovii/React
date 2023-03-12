@@ -1,14 +1,19 @@
 {
   "products": [
     {
-      "id": 1,
-      "title": "Product 1",
-      "price": 899
+      "title": "Apple",
+      "price": "7",
+      "id": 1
     },
     {
-      "id": 2,
-      "title": "Product 2",
-      "price": 983
+      "title": "Banana",
+      "price": "32",
+      "id": 2
+    },
+    {
+      "title": "Orange",
+      "price": "20",
+      "id": 3
     }
   ]
 }

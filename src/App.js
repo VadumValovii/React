@@ -1,7 +1,13 @@
 import './App.css';
 import { useState } from 'react';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Header from './components/Header/Header';
 import ProductList from './components/ProductList/ProductList';
+import About from './components/About/About';
+import Contact from './components/Contact/Contact';
+import AddProduct from './components/AddProduct/AddProduct';
+import EditProduct from './components/EditProduct/EditProduct';
+
 
 function App() {
 
@@ -13,7 +19,6 @@ function App() {
     {id:4,title:'Product 4',price:930},
     {id:5,title:'Product 5',price:780}
   ]);
-
 
   const clickMe=()=>{
     setTitle('Title is change');
@@ -28,7 +33,18 @@ function App() {
   return ( 
     <div>
       <Header/>
-      <ProductList products={products} deleteProduct={deleteProduct}/>
+      <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<ProductList products={products} deleteProduct={deleteProduct}/>} >
+            </Route>
+            <Route path='/about' element={<About/>}></Route>
+            <Route path='/contact' element={<Contact/>}></Route>
+            <Route path='/add' element={<AddProduct/>}></Route>
+            <Route path='/edit' element={<EditProduct/>}></Route>
+
+          </Routes>
+      </BrowserRouter>
+    
     </div>
   );
 }
